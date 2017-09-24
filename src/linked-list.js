@@ -1,15 +1,13 @@
 const Node = require('./node');
 
 class LinkedList {
-    constructor() {
     constructor(length=0) 
     {this.length=length;
         this._head=new Node();
         this._tail=new Node();}
-    }
 
     append(data) {
-    if(this.length==0) {
+        if(this.length==0) {
             this._head.data=data;
             this._tail=this._head;
             this.length++;
@@ -25,15 +23,15 @@ class LinkedList {
     }
 
     head() {
-    return this._head.data;
+        return this._head.data;
     }
 
     tail() {
-     return this._tail.data;
+        return this._tail.data;
     }
 
     at(index) {
-     var k=0,h=this._head;
+        var k=0,h=this._head;
         while(k!=index) {
             h=h.next;
             k++;
@@ -42,7 +40,7 @@ class LinkedList {
     }
 
     insertAt(index, data) {
-    if(this.length==0) {
+        if(this.length==0) {
             this._head.data=data;
             this._tail=this._head;
             return this;
@@ -57,18 +55,18 @@ class LinkedList {
     }
 
     isEmpty() {
-    if(this.length==0) return true; else return false;
+        if(this.length==0) return true; else return false;
     }
 
     clear() {
-     this._head.data=this._head.next=this._head.prev=null;
+        this._head.data=this._head.next=this._head.prev=null;
         this._tail.data=this._tail.next=this._tail.prev=null;
         this.length=0;
         return this;
     }
 
     deleteAt(index) {
-    if(this.length==1) {
+        if(this.length==1) {
             this._head.data=null;
             this._tail.data=null;
             this.length=0;
@@ -106,18 +104,16 @@ class LinkedList {
         this._head=this.head1;
         this._tail=this.t;
         return this;
-    
     }
 
     indexOf(data) {
-    var k=0,h=this._head, b;
+        var k=0,h=this._head, b;
         while(k<this.length) {
             if(h.data==data) return k;
             h=h.next;
             k++;
         }
         return -1;
-    }
     }
 }
 
